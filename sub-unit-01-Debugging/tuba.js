@@ -65,7 +65,7 @@ function verifyMonths() {
       }
    } catch (message) {
       validity = false;
-      messageText = "";
+      messageText = message;
       acresBox.value = "";
    } finally {
       acresComplete = validity;
