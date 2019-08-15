@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <!--
       Exercise 01_06_01
@@ -16,6 +17,8 @@
    <link rel="stylesheet" href="snoot.css" />
    <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
    <script src="modernizr.custom.65897.js"></script>
+   <script type="text/javascript" src="snoot.js"></script>
+
 </head>
 
 <body>
@@ -25,7 +28,7 @@
             Snoot Flowers
          </h1>
       </header>
-   
+
       <nav>
          <ul>
             <li><a href="#">Floral Arrangements</a></li>
@@ -35,7 +38,7 @@
          </ul>
       </nav>
    </div>
-      
+
    <article>
       <h2>Place an Order</h2>
       <div id="errorText"></div>
@@ -52,9 +55,10 @@
             <label for="love">I love you!</label>
             <input id="custom" name="CustomMessage" type="checkbox" />
             <label for="custom">Custom message:</label>
-            <textarea id="customText" name="CustomText" placeholder="Enter custom message here (max 250 characters)"></textarea>
+            <textarea id="customText" name="CustomText"
+               placeholder="Enter custom message here (max 250 characters)"></textarea>
             <div class="errorMessage"></div>
-          </fieldset>
+         </fieldset>
          <fieldset id="billingAddress" class="text">
             <legend>Billing Address</legend>
             <label for="billFName">First Name</label>
@@ -216,7 +220,7 @@
                   <option value="11">November</option>
                   <option value="12">December</option>
                </select>
-               <select id="delivDy" name="DelivDay" required="required">
+               <select id="delivDay" name="DelivDay" required="required">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -303,14 +307,15 @@
                   </select>
                </div>
                <label for="cvv">CVV</label>
-               <input id="cvv" name="CVVValue" type="number" required="required" /> 
+               <input id="cvv" name="CVVValue" type="number" required="required" />
                <div id="cvvErrorMessage"></div>
             </div>
             <div class="errorMessage"></div>
          </fieldset>
          <fieldset id="createAccount" class="text">
             <legend>Create Account?</legend>
-            <p>To be able to access your purchase history and make changes to your order, enter a name and password to create an account.</p>
+            <p>To be able to access your purchase history and make changes to your order, enter a name and password to
+               create an account.</p>
             <label for="username">Username</label>
             <input id="username" name="NewUsername" type="text" />
             <label for="pass1">Password</label>
@@ -326,4 +331,5 @@
    </article>
    <footer>Snoot Flowers <span>&bull;</span> Davenport, Iowa</footer>
 </body>
+
 </html>

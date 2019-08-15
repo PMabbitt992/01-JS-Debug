@@ -132,6 +132,7 @@ function previewThree() {
 
 /* open center figure in separate window */
 function zoomFig() {
+   //styles for the zoomed figure
    var propertyWidth = 960;
    var propertyHeight = 600;
    var winLeft = ((screen.width - propertyWidth) / 2);
@@ -139,19 +140,19 @@ function zoomFig() {
    var winOptions = "width=960,height=600,";
    winOptions += ",left=" + winLeft;
    winOptions += ",top=" + winTop;
+   //when the var zoomWindow is focused on, open zoom.html using winOptions as the styles
    var zoomWindow = window.open("zoom.html", "zoomwin",
       winOptions);
    zoomWindow.focus();
-
 }
 
+//create event listeners for click events
 function createEventListeners() {
    var leftarrow = document.getElementById("leftarrow");
    if (leftarrow.addEventListener) {
       leftarrow.addEventListener("click", leftArrow, false);
    } else if (leftarrow.attachEvent) {
       leftarrow.attachEvent("onclick", leftArrow);
-      alert("left arrow clicked");
    }
 
    var rightarrow = document.getElementById("rightarrow");
@@ -159,7 +160,6 @@ function createEventListeners() {
       rightarrow.addEventListener("click", rightArrow, false);
    } else if (leftarrow.attachEvent) {
       rightarrow.attachEvent("onclick", rightArrow);
-      alert("left arrow clicked");
    }
 
 

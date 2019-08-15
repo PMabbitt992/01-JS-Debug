@@ -38,11 +38,13 @@ function verifyAcres() {
       if (!(acresBox.value > 0)) {
          throw "Please put in a number greater than 0"
       }
+      //if the acres value is less than zero, the value will blank and display an error message
    } catch (message) {
       validity = false;
-      messageText = "";
+      messageText = message;
       acresBox.value = "";
    } finally {
+      //if valid, it will continue to test for completion
       acresComplete = validity;
       messageElement.innerHTML = messageText;
       messageHeadElement.innerHTML = "";
@@ -63,11 +65,13 @@ function verifyMonths() {
       if (!(monthsBox.value >= 1 && monthsBox.value <= 12)) {
          throw "Please enter a number between 1 and 12";
       }
+      //if the months value is less than one or more than 12, the value will blank and display an error message
    } catch (message) {
       validity = false;
       messageText = message;
       acresBox.value = "";
    } finally {
+      //if valid, it will continue to test for completion
       acresComplete = validity;
       messageElement.innerHTML = messageText;
       messageHeadElement.innerHTML = "";

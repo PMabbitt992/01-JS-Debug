@@ -25,6 +25,7 @@ function closeWin() {
 }
 
 function createEventListener() {
+   //once the close window button is clicked, close the window
    var closeWindowDiv = document.getElementsByTagName("p")[0];
    if (closeWindowDiv.addEventListener) {
       closeWindowDiv.addEventListener("click", closeWin, false);
