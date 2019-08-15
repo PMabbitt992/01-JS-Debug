@@ -70,7 +70,9 @@ function updateDays() {
 
 }
 
-function
+function autoCheckCustom() {
+
+}
 
 
 //click event listeners for various buttons
