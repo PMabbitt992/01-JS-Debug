@@ -13,7 +13,9 @@
 /* global variables */
 var photoOrder = [1, 2, 3, 4, 5];
 var figureCount = 3;
-figureCount = 5;
+var autoAdvance = setInterval(rightAdvance, 5000);
+
+
 
 function populateFigures() {
    var filename;
@@ -35,7 +37,7 @@ function populateFigures() {
 
 }
 /* shift all images one figure to the left, and change values in photoOrder array to match  */
-function rightArrow() {
+function rightAdvance() {
    for (var i = 0; i < 5; i++) {
       if ((photoOrder[i] + 1) === 6) {
          photoOrder[i] = 1;
@@ -46,8 +48,14 @@ function rightArrow() {
    }
 }
 
+function rightArrow() {
+   clearInterval(autoAdvance);
+   rightAdvance();
+}
+
 /* shift all images one figure to the right, and change values in photoOrder array to match  */
 function leftArrow() {
+   clearInterval(autoAdvance);
    for (var i = 0; i < 5; i++) {
       if ((photoOrder[i] - 1) === 0) {
          photoOrder[i] = 5;
@@ -100,6 +108,7 @@ function previewFive() {
       numberButton.attachEvent("onclick", previewThree);
    }
 
+   figureCount = 5;
 }
 
 function previewThree() {
@@ -123,9 +132,17 @@ function previewThree() {
 
 /* open center figure in separate window */
 function zoomFig() {
+   var propertyWidth = 960;
+   var propertyHeight = 600;
+   var winLeft = ((screen.width - propertyWidth) / 2);
+   var winTop = ((screen.height - propertyHeight) / 2);
+   var winOptions = "width=960,height=600,";
+   winOptions += ",left=" + winLeft;
+   winOptions += ",top=" + winTop;
    var zoomWindow = window.open("zoom.html", "zoomwin",
-      "width=960,height=600");
-   zoomWindow.focus;
+      winOptions);
+   zoomWindow.focus();
+
 }
 
 function createEventListeners() {
